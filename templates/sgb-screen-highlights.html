@@ -1,24 +1,12 @@
 <ion-view mz-screen view-title="{{ title | translate }}">
     <ion-content class="content">
     	<div class="list">
-    		<div class="highlight" ng-style="{'background-image':'url(http://childrensdirectory.net/wp-content/uploads/2014/10/soccer.jpg)'}">
+    		<div ng-repeat="important in high" class="highlight" ng-style="{'background-image':'url('+important[1].trendingimg+')'}">
     			<div class="info">
-    				<p class="title">FIFA World Cup 2018.</p>
-    				<p class="subtitle">20:30 | ESPN 2</p>
+    				<p class="title">{{important[1].name}}</p>
+    				<p class="subtitle">{{convertTime(important[1].time)}} | {{important[0]}}</p>
     			</div>
     			<!-- <span class="ion-ios-football icon"></span> -->
-	        </div>
-	        <div class="highlight" ng-style="{'background-image':'url(http://www.srls.org/wp-content/uploads/2015/07/Document.jpg)'}">
-    			<div class="info">
-    				<p class="title">Basketball Thing 2018</p>
-    				<p class="subtitle">20:30 | ESPN 2</p>
-    			</div>
-	        </div>
-	        <div class="highlight" ng-style="{'background-image':'url(http://resources3.news.com.au/images/2011/05/18/1226058/542419-super-rugby.jpg)'}">
-    			<div class="info">
-    				<p class="title">FIFA World Cup 2018</p>
-    				<p class="subtitle">20:30 | ESPN 2</p>
-    			</div>
 	        </div>
         </div>
     </ion-content>
