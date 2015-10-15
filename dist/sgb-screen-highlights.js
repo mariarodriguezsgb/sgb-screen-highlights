@@ -8,6 +8,7 @@ angular.module('sgb-screen-highlights', ['megazord'])
         $scope.data=$stateParams.data;
         $scope.high=[];
         $scope.channelNShow=[];
+        $scope.class;
 
 
         var loadingHigh = function () {
@@ -21,7 +22,6 @@ angular.module('sgb-screen-highlights', ['megazord'])
 	        		}
 	        	}
 	        }
-	        console.log($scope.high);
         }
 
         loadingHigh();
@@ -31,6 +31,21 @@ angular.module('sgb-screen-highlights', ['megazord'])
         	var minutes = 60*(hours-hour);
         	return ("0" + hour).slice(-2)+':'+minutes;
         }
+
+        var getQty = function () {
+            switch ($scope.high.length) {
+                case 1:
+                    $scope.class= 1;
+                    break;
+                case 2:
+                    $scope.class= 2;
+                    break;
+                default:
+                    $scope.class= 3;
+            }
+        }
+
+        getQty();
         
     }]);
 
